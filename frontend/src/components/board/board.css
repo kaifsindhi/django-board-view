@@ -73,6 +73,7 @@
 
 .list .add_list {
   background: var(--color-blue-light-variant);
+  border-radius: 0.4rem;
   max-height: 32px;
   display: flex;
   flex-direction: row;
