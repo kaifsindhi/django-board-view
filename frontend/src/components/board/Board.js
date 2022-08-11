@@ -1,6 +1,7 @@
 import React from "react";
 import List from "./List";
 import TopBar from "./TopBar";
+import "./board.css";
 
 const Board = (props) => {
   return (

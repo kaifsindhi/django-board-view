@@ -1,0 +1,99 @@
+/* Navigation bar */
+nav {
+  position: fixed;
+}
+
+nav button.icon.avatar {
+  border-radius: 50%;
+  background-color: var(--color-blue-dark);
+}
+
+nav button.title {
+  width: 100px;
+  padding: 0;
+}
+
+nav button.navigation_item {
+  padding-left: 1rem;
+}
+
+nav button.navigation_item h6 {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+nav button.search_bar,
+nav button.search_bar h6 {
+  cursor: text;
+}
+
+nav button.search_bar {
+  background-color: var(--color-blue-light-variant);
+
+  border: 2px solid var(--color-blue-light);
+
+  display: flex;
+  justify-content: left;
+
+  border-radius: 0.4rem;
+  width: 200px;
+}
+
+nav button.search_bar button.icon {
+  display: flex;
+  justify-content: center;
+
+  width: 20px;
+}
+
+nav button.search_bar h6 {
+  opacity: 0.5;
+
+  font-size: 14px;
+  font-weight: 100;
+
+  padding: 5px;
+}
+
+nav button:hover {
+  background-color: var(--color-blue-light);
+}
+
+button.gap:hover {
+  flex-grow: 1;
+  background: transparent;
+  cursor: auto;
+}
+
+nav h6 {
+  color: var(--color-white);
+  font-size: 18px;
+}
+
+nav .create {
+  background: var(--color-blue-dark);
+  padding: 14px;
+}
+
+nav .create h6 {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+/* Medium Devices */
+@media screen and (max-width: 1024px) {
+  nav button.navigation_item {
+    display: none;
+  }
+}
+
+/* Small Devices */
+@media screen and (max-width: 600px) {
+  nav button.search_bar {
+    display: none;
+  }
+
+  .mobile {
+    display: inherit;
+  }
+}

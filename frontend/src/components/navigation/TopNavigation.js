@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdOutlineNotificationsNone } from "react-icons/md";
+import './navigation.css';
 
 const Navigation = () => {
   return (
@@ -17,7 +18,7 @@ const Navigation = () => {
         <TbGridDots color="white" size={20} />
       </button>
 
-      <a href="#">
+      <a href="/">
         <button className="title">
           <AiFillAppstore color="white" size={20} />
           <h6>Demo</h6>

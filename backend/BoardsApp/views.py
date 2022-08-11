@@ -13,9 +13,15 @@ from .serializers import BoardSerializer, ListSerializer, CardSerializer
 @csrf_exempt
 def BoardAPI(request, id=0):
     if request.method == 'GET':  # Get all records
-        boards = Board.objects.all()
-        boards_serializer = BoardSerializer(boards, many=True)
-        return JsonResponse(boards_serializer.data, safe=False)
+        if id:  # If ID is provided, then get specified Board
+            boards = Board.objects.get(Id=id)
+            boards_serializer = BoardSerializer(boards)
+            return JsonResponse(boards_serializer.data, safe=False)
+
+        else:  # If ID is not provided, get all Boards
+            boards = Board.objects.all()
+            boards_serializer = BoardSerializer(boards, many=True)
+            return JsonResponse(boards_serializer.data, safe=False)
 
     elif request.method == 'POST':  # Create new record
         board_data = JSONParser().parse(request)

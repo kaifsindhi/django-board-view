@@ -14,7 +14,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />}/>
-          <Route path="b" element={<Board Title="My First Board" />}/>
+          <Route path="b/:boardId" element={<Board Title="My First Board" />}/>
         </Routes>
       </Router>
     </>

@@ -4,7 +4,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { HiOutlineTemplate } from "react-icons/hi";
 import ListTile from "./ListTile";
 
-const List = props => {
+const List = (props) => {
   return (
     <div className="list">
       <div className="list_title">
@@ -14,6 +14,7 @@ const List = props => {
         </button>
       </div>
       <ul>
+        <ListTile Title="My First Card" />
         <ListTile Title="My First Card" />
       </ul>
       <div className="list_title">
@@ -27,6 +28,7 @@ const List = props => {
           </a>
         </button>
       </div>
+      <div className="list_end_pad"/>
     </div>
   );
 };

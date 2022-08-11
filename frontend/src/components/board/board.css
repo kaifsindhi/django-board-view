@@ -1,0 +1,164 @@
+/* Board */
+.board {
+  background: var(--color-blue);
+}
+
+.board .top {
+  padding: 6px;
+}
+
+.board .item,
+.board .title {
+  padding: 15px;
+}
+
+.board .title {
+  background: var(--color-blue);
+}
+
+.board .item {
+  background: var(--color-blue-light-variant);
+}
+
+.board .item:hover,
+.board .title:hover {
+  background: var(--color-blue-light);
+}
+
+.board h5 {
+  color: white;
+}
+
+.board .title h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.board .item h5 {
+  padding: 6px;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.board .star {
+  color: white;
+}
+
+.board .star:hover {
+  color: gold;
+}
+
+/* List */
+.list {
+  background: var(--color-gray);
+
+  width: 272px;
+  box-sizing: border-box;
+
+  border-radius: 0.4rem;
+  margin: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.list .list_title {
+  max-height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.list .list_title h6 {
+  max-height: 40px;
+  flex-grow: 1;
+  font-size: 13.5px;
+  margin: 5px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.list button:hover {
+  background: var(--color-gray-light);
+}
+
+.list .list_add_card {
+  flex-grow: 1;
+}
+
+.list .list_add_card h6 {
+  color: gray;
+
+  font-size: 11px;
+}
+
+.list ul {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  min-width: 256px;
+
+  margin: 2px;
+}
+
+.list li {
+  cursor: pointer;
+
+  border-radius: 0.3rem;
+
+  background: white;
+  min-height: 32px;
+  min-width: 256px;
+
+  margin: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow: 1px 1px gray;
+}
+
+.list li h6 {
+  color: black;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.list_tile button {
+  width: 28px;
+  height: 28px;
+}
+
+.list_tile .list_tile_edit {
+  display: none;
+}
+
+.list_tile .list_tile_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 3px;
+  padding-left: 9px;
+
+  max-height: 28px;
+}
+
+.list_tile .list_tile_title:hover .list_tile_edit {
+  display: flex;
+}
+
+.list_tile .list_tile_title h6 {
+  flex-grow: 1;
+}
+
+.list_end_pad {
+  padding: 2.5px;
+}
