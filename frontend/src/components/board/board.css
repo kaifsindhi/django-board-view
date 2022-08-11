@@ -167,6 +167,10 @@
   line-height: 20px;
 }
 
+li:hover {
+  background: var(--color-gray);
+}
+
 .list_tile button {
   width: 28px;
   height: 28px;
