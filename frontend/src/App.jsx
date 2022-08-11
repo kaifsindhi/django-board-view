@@ -1,20 +1,19 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopNavigation from "./components/navigation/TopNavigation";
 import Board from "./components/board/Board";
 import Card from "./components/board/Card";
 import Home from "./components/home/Home";
 
-const App = () => {
+const App = (props) => {
   return (
     <>
       <TopNavigation />
       <Card />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />}/>
-          <Route path="b/:boardId" element={<Board Title="My First Board" />}/>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/b/:board_id" element={<Board />} />
         </Routes>
       </Router>
     </>

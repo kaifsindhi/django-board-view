@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineStar, AiFillStar, AiOutlineLock } from "react-icons/ai";
+import {MdPublic} from 'react-icons/md';
 
 const TopBar = (props) => {
   return (
@@ -17,8 +18,10 @@ const TopBar = (props) => {
       <button className="divider">|</button>
 
       <button className="item">
-        <AiOutlineLock color="white" size={18} />
-        <h5 className="hide_mobile">Private</h5>
+        {/* <AiOutlineLock color="white" size={18} />
+        <h5 className="hide_mobile">Private</h5> */}
+        <MdPublic color="white" size={18}/>
+        <h5 className="hide_mobile">Public</h5>
       </button>
     </div>
   );

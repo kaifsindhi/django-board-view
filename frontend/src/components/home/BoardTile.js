@@ -2,6 +2,7 @@ import React from "react";
 
 const BoardTile = (props) => {
   const board = props.board;
+  
   return (
     <div>
       <a href={"/b/" + board.Id}>

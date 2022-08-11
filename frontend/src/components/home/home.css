@@ -10,7 +10,7 @@
   background: var(--color-blue);
 
   border-radius: 0.4rem;
-  min-width: 180px;
+  max-width: 180px;
   min-height: 96px;
 
   padding: 10px;
@@ -19,13 +19,6 @@
 
 .board_tile:hover {
   background: var(--color-blue-dark);
-
-  border-radius: 0.4rem;
-  min-width: 180px;
-  min-height: 96px;
-
-  padding: 10px;
-  margin: 5px;
 }
 
 .board_tile h6 {
@@ -35,4 +28,32 @@
 
   font-size: 16px;
   height: 20px;
+}
+
+.board_tile_add {
+  background: var(--color-gray);
+
+  border-radius: 0.4rem;
+  min-width: 180px;
+  min-height: 96px;
+
+  padding: 10px;
+  margin: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.board_tile_add:hover {
+  background: var(--color-gray-light);
+}
+
+.board_tile_add h6 {
+  color: var(--color-gray-dark);
+
+  font-size: 14px;
+  font-weight: 400;
 }
