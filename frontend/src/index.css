@@ -1,0 +1,385 @@
+/* CSS variables */
+:root {
+    --color-bg: #202020;
+    --color-bg-variant: #6b4f2c;
+    --color-primary: #ff974d;
+    --color-primary-variant: rgba(255, 151, 77, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.6);
+  
+    --transition: all 400ms ease;
+  
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+  
+    --color-blue: #026aa7;
+    --color-blue-dark: #014a75;
+    --color-blue-light: #4e97c2;
+    --color-blue-light-variant: #3588b9;
+    --color-gray: #ebecf0;
+    --color-gray-light: #dadbe2;
+  }
+  
+  /* Remove default browser formatting  */
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  html {
+    overflow: hidden;
+  }
+  
+  /* Tooltip */
+  .tooltip .tooltiptext {
+    color: black;
+  }
+  
+  /* General */
+  section {
+    height: 100vh;
+    margin-top: 44px;
+    overflow: visible;
+  }
+  
+  button {
+    color: white;
+  
+    background-color: transparent;
+  
+    border-radius: 0.2rem;
+    height: 32px;
+    padding: 6px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+    top: 0;
+  }
+  
+  .divider {
+    cursor: auto;
+  
+    opacity: 0.5;
+    font-size: 14px;
+  }
+  
+  nav,
+  .board .top {
+    background-color: var(--color-blue);
+    color: white;
+  
+    top: 0;
+    width: 100vw;
+    height: 44px;
+    padding: 6px;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  button.icon {
+    width: 32px;
+    padding: 0;
+  }
+  
+  button.icon.dark {
+    background-color: var(--color-blue-dark);
+  }
+  
+  button.icon.dark:hover,
+  button.icon.avatar:hover {
+    background-color: var(--color-blue-light);
+  }
+  
+  button.gap {
+    flex-grow: 1;
+  }
+  
+  /* Navigation bar */
+  nav {
+    position: fixed;
+  }
+  
+  nav button.icon.avatar {
+    border-radius: 50%;
+    background-color: var(--color-blue-dark);
+  }
+  
+  nav button.title {
+    width: 100px;
+    padding: 0;
+  }
+  
+  nav button.navigation_item {
+    padding-left: 1rem;
+  }
+  
+  nav button.navigation_item h6 {
+    font-size: 14px;
+    font-weight: 100;
+  }
+  
+  nav button.search_bar,
+  nav button.search_bar h6 {
+    cursor: text;
+  }
+  
+  nav button.search_bar {
+    background-color: var(--color-blue-light-variant);
+  
+    border: 2px solid var(--color-blue-light);
+  
+    display: flex;
+    justify-content: left;
+  
+    border-radius: 0.4rem;
+    width: 200px;
+  }
+  
+  nav button.search_bar button.icon {
+    display: flex;
+    justify-content: center;
+  
+    width: 20px;
+  }
+  
+  nav button.search_bar h6 {
+    opacity: 0.5;
+  
+    font-size: 14px;
+    font-weight: 100;
+  
+    padding: 5px;
+  }
+  
+  nav button:hover {
+    background-color: var(--color-blue-light);
+  }
+  
+  button.gap:hover {
+    flex-grow: 1;
+    background: transparent;
+    cursor: auto;
+  }
+  
+  nav h6 {
+    color: var(--color-white);
+    font-size: 18px;
+  }
+  
+  nav .create {
+    background: var(--color-blue-dark);
+    padding: 14px;
+  }
+  
+  nav .create h6 {
+    font-size: 14px;
+    font-weight: 100;
+  }
+  
+  /* Board */
+  .board {
+    background: var(--color-blue);
+  }
+  
+  .board .top {
+    padding: 6px;
+  }
+  
+  .board .item,
+  .board .title {
+    padding: 15px;
+  }
+  
+  .board .title {
+    background: var(--color-blue);
+  }
+  
+  .board .item {
+    background: var(--color-blue-light-variant);
+  }
+  
+  .board .item:hover,
+  .board .title:hover {
+    background: var(--color-blue-light);
+  }
+  
+  .board h5 {
+    color: white;
+  }
+  
+  .board .title h5 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .board .item h5 {
+    padding: 6px;
+  
+    font-size: 13px;
+    font-weight: 400;
+  }
+  
+  .board .star {
+    color: white;
+  }
+  
+  .board .star:hover {
+    color: gold;
+  }
+  
+  /* List */
+  .list {
+    background: var(--color-gray);
+  
+    width: 272px;
+    box-sizing: border-box;
+  
+    border-radius: 0.4rem;
+    margin: 8px;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .list .list_title {
+    max-height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .list .list_title h6 {
+    max-height: 40px;
+    flex-grow: 1;
+    font-size: 13.5px;
+    margin: 5px;
+  
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .list button:hover {
+    background: var(--color-gray-light);
+  }
+  
+  .list .list_add_card {
+    flex-grow: 1;
+  
+    padding: 10px;
+  }
+  
+  .list .list_add_card h6 {
+    color: gray;
+  
+    font-size: 11px;
+  }
+  
+  .list ul {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    min-width: 256px;
+  
+    margin: 2px;
+  }
+  
+  .list li {
+    cursor: pointer;
+  
+    border-radius: 0.3rem;
+  
+    background: white;
+    min-height: 32px;
+    min-width: 256px;
+  
+    margin: 5px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    box-shadow: 1px 1px gray;
+  }
+  
+  .list li h6 {
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  .list_tile button {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .list_tile .list_tile_edit {
+    display: none;
+  }
+  
+  .list_tile .list_tile_title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    padding: 3px;
+    padding-left: 9px;
+  
+    max-height: 28px;
+  }
+  
+  .list_tile .list_tile_title:hover .list_tile_edit {
+    display: flex;
+  }
+  
+  .list_tile .list_tile_title h6 {
+    flex-grow: 1;
+  }
+  
+  .home {
+    display: flex;
+  }
+  
+  .board_tile {
+    background: black;
+    min-width: 180px;
+    min-height: 96px;
+  }
+  
+  /* Hide Defaults */
+  .mobile {
+    display: none;
+  }
+  
+  /* Medium Devices */
+  @media screen and (max-width: 1024px) {
+    nav button.navigation_item {
+      display: none;
+    }
+  }
+  
+  /* Small Devices */
+  @media screen and (max-width: 600px) {
+    nav button.search_bar,
+    .hide_mobile {
+      display: none;
+    }
+  
+    .mobile {
+      display: inherit;
+    }
+  }
+  
