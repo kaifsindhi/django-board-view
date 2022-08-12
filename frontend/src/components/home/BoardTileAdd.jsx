@@ -14,9 +14,9 @@ const BoardTileAdd = () => {
         Title: board.Title,
       }),
     };
-    fetch("http://127.0.0.1:8000/board/", requestOptions)
-      .then((response) => response.json())
-      .then((data) => this.props.history.push("/b/" + data.Id));
+    fetch("http://127.0.0.1:8000/board/", requestOptions).then((response) => {
+      console.log(response.json());
+    });
   };
 
   const renderCreateBoard = () => {
