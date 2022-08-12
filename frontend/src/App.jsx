@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopNavigation from "./components/navigation/TopNavigation";
 import Board from "./components/board/Board";
-import Card from "./components/board/Card";
+import Card from "./components/card/Card";
 import Home from "./components/home/Home";
 
 const App = (props) => {
   return (
     <>
       <TopNavigation />
-      <Card />
+      {/* <Card /> */}
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />

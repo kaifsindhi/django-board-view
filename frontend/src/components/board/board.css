@@ -211,7 +211,7 @@ li:hover {
   display: flex;
 }
 
-.enter_list_title input {
+input {
   padding: 10px;
   border-radius: 0.2rem;
   flex-grow: 1;
@@ -239,4 +239,22 @@ li:hover {
 
 .enter_list_title button.cancel:hover {
   color: gray;
+}
+
+div.add_card {
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+input.card_input {
+  height: 100%;
+}
+
+.add_card_container .enter_list_title {
+  padding-left: 8px;
 }

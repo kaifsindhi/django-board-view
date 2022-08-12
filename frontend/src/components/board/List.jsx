@@ -3,6 +3,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 import { HiOutlineTemplate } from "react-icons/hi";
 import ListTile from "./ListTile";
+import ListAdd from "./ListAdd";
 
 const List = (props) => {
   const list = props.list; // Information about the list
@@ -39,17 +40,7 @@ const List = (props) => {
         {/* <ListTile Title="My First Card" />
         <ListTile Title="My First Card" /> */}
       </ul>
-      <div className="list_title">
-        <button className="list_add_card">
-          <AiOutlinePlus size={16} color="gray" />
-          <h6>Add a card</h6>
-        </button>
-        <button>
-          <a title="Create from template">
-            <HiOutlineTemplate size={16} color="gray" />
-          </a>
-        </button>
-      </div>
+      <ListAdd/>
       <div className="list_end_pad" />
     </div>
   );
