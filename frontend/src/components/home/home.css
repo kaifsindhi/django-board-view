@@ -52,8 +52,43 @@
 }
 
 .board_tile_add h6 {
-  color: var(--color-gray-dark);
-
   font-size: 14px;
   font-weight: 400;
+}
+
+.board_tile_create {
+  background: var(--color-gray-light);
+
+  border-radius: 0.4rem;
+  width: 180px;
+
+  padding: 5px;
+  margin: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board_tile_line, .board_tile_2nd {
+  width: 100%;
+  display: flex;
+}
+
+.board_tile_2nd {
+  margin-top: 5px;
+}
+
+.board_tile_2nd .cancel {
+  color: black;
+}
+
+.board_tile_2nd .cancel:hover {
+  color: gray;
+}
+
+.board_tile_2nd .add_board {
+  background-color: var(--color-blue);
+  color: white;
+  padding: 10px;
 }

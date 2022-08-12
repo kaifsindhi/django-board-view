@@ -1,6 +1,5 @@
 import React from "react";
 import { FiEdit2 } from "react-icons/fi";
-import { GrTextAlignFull } from "react-icons/gr";
 
 const ListTile = props => {
   const tile = props.tile; // Information about the tile
