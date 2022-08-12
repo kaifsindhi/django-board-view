@@ -203,3 +203,40 @@ li:hover {
 .list_end_pad {
   padding: 2.5px;
 }
+
+.list .enter_list_title {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+}
+
+.enter_list_title input {
+  padding: 10px;
+  border-radius: 0.2rem;
+  flex-grow: 1;
+  height: 28px;
+
+  border: 2px solid var(--color-blue);
+}
+
+.enter_list_title button {
+  color: white;
+  background: var(--color-blue);
+  width: 70px;
+}
+
+.enter_list_title button:hover {
+  background: var(--color-blue-light);
+}
+
+.enter_list_title button.cancel {
+  background: transparent;
+  color: black;
+  width: 32px;
+  height: 32px;
+}
+
+.enter_list_title button.cancel:hover {
+  color: gray;
+}
