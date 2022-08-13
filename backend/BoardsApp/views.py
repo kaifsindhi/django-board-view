@@ -67,11 +67,20 @@ def ListAPI(request, board_id=0, list_id=0):
             list_serializer.save()
             return JsonResponse(list_serializer.data, safe=False)
         return JsonResponse("Failed to add", safe=False)
-        
+
     elif request.method == 'DELETE':  # Delete a record
         list_ = List.objects.get(Id=board_id)
         list_.delete()
         return JsonResponse("Deleted successfully", safe=False)
+
+    elif request.method == 'PUT':  # Update a record
+        list_data = JSONParser().parse(request)
+        list_ = List.objects.get(Id=list_data['Id'])
+        list_serializer = ListSerializer(list_, data=list_data)
+        if list_serializer.is_valid():
+            list_serializer.save()
+            return JsonResponse("Updated successfully", safe=False)
+        return JsonResponse("Failed to update", safe=False)
 
 
 @csrf_exempt
