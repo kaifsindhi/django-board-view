@@ -110,3 +110,12 @@ def CardAPI(request, board_id=0, list_id=0, card_id=0):
         card = Card.objects.get(Id=board_id)
         card.delete()
         return JsonResponse("Deleted successfully", safe=False)
+
+    elif request.method == 'PUT':  # Update a record
+        card_data = JSONParser().parse(request)
+        card = Card.objects.get(Id=card_data['Id'])
+        card_serializer = CardSerializer(card, data=card_data)
+        if card_serializer.is_valid():
+            card_serializer.save()
+            return JsonResponse("Updated successfully", safe=False)
+        return JsonResponse("Failed to update", safe=False)

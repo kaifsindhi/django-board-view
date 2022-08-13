@@ -23,7 +23,7 @@ const Board = () => {
     fetch("http://127.0.0.1:8000/board/" + params.board_id + "/list/")
       .then((response) => response.json())
       .then(setLists);
-  }, []);
+  }, [lists]);
 
   return (
     <section className="board">

@@ -42,7 +42,7 @@ const List = (props) => {
     )
       .then((response) => response.json())
       .then(setTiles);
-  }, [list]);
+  }, [tiles]);
 
   const deleteList = () => {
     console.log(list.Id);

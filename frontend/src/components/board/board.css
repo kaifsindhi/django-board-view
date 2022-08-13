@@ -261,3 +261,16 @@ input.card_input {
 .add_card_container .enter_list_title {
   padding-left: 8px;
 }
+
+form.card {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 32px;
+}
