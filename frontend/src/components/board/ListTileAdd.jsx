@@ -2,22 +2,47 @@ import { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
-const ListTileAdd = () => {
+const ListTileAdd = (props) => {
+  const board_id = props.board_id;
   const [action, setAction] = useState("");
+  const [list, setList] = useState({ Title: "" });
   // actions : Default"" / Create"create" / Delete"delete" / Edit"edit"
+
+  const createList = () => {
+    console.log(list);
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        Board: board_id,
+        Title: list.Title,
+      }),
+    };
+    fetch("http://127.0.0.1:8000/board/" + board_id + "/list/", requestOptions).then(
+      (response) => {
+        console.log(response.json());
+      }
+    );
+  };
 
   const renderCreateList = () => {
     return (
       <form>
         <div className="list">
           <div className="enter_list_title">
-            <input type="text" id="Title" placeholder="Enter a list title..." />
+            <input
+              type="text"
+              id="Title"
+              placeholder="Enter a list title..."
+              onChange={(e) => setList({ Title: e.target.value })}
+            />
           </div>
           <div className="enter_list_title">
             <button
               onClick={() => {
-                // TODO: Create
                 setAction("");
+                createList();
               }}
             >
               Add list

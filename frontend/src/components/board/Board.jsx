@@ -32,7 +32,7 @@ const Board = (props) => {
         {lists.map((list) => (
           <List board_id={params.board_id} list={list} />
         ))}
-        <ListTileAdd />
+        <ListTileAdd board_id={params.board_id} />
       </div>
     </section>
   );
