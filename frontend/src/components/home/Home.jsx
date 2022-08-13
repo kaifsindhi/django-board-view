@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
 import BoardTile from "./BoardTile";
 import BoardTileAdd from "./BoardTileAdd";
 import "./home.css";
@@ -8,7 +7,7 @@ const Home = () => {
   const [boards, setBoards] = useState([]);
 
   useEffect(() => {
-    // Get list tiles
+    // Get board tiles
     fetch("http://127.0.0.1:8000/board/")
       .then((response) => response.json())
       .then(setBoards);

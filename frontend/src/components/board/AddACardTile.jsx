@@ -17,7 +17,7 @@ const ListAdd = (props) => {
       body: JSON.stringify({
         List: list_id,
         Title: card.Title,
-        Description: ""
+        Description: "",
       }),
     };
     fetch(
@@ -30,31 +30,31 @@ const ListAdd = (props) => {
 
   const renderCreateCard = () => {
     return (
-      <div class="add_card_container">
-        <div className="add_card">
-          <input
-            className="card_input"
-            type="text"
-            id="Title"
-            placeholder="Enter a card title..."
-            onChange={(e) => setCard({ Title: e.target.value })}
-          />
+      <form
+        onSubmit={() => {
+          setAction("");
+          createCard();
+        }}
+      >
+        <div class="add_card_container">
+          <div className="add_card">
+            <input
+              className="card_input"
+              type="text"
+              id="Title"
+              placeholder="Enter a card title..."
+              onChange={(e) => setCard({ Title: e.target.value })}
+            />
+          </div>
+          <div className="enter_list_title">
+            <button type="submit">Add card</button>
+            <button className="cancel" onClick={() => setAction("")}>
+              <MdOutlineCancel color="inherit" size={"100%"} />
+            </button>
+          </div>
+          <div className="list_end_pad" />
         </div>
-        <div className="enter_list_title">
-          <button
-            onClick={() => {
-              setAction("");
-              createCard();
-            }}
-          >
-            Add card
-          </button>
-          <button className="cancel" onClick={() => setAction("")}>
-            <MdOutlineCancel color="inherit" size={"100%"} />
-          </button>
-        </div>
-        <div className="list_end_pad" />
-      </div>
+      </form>
     );
   };
 

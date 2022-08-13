@@ -29,7 +29,12 @@ const ListTileAdd = (props) => {
 
   const renderCreateList = () => {
     return (
-      <form>
+      <form
+        onSubmit={() => {
+          setAction("");
+          createList();
+        }}
+      >
         <div className="list">
           <div className="enter_list_title">
             <input
@@ -40,14 +45,7 @@ const ListTileAdd = (props) => {
             />
           </div>
           <div className="enter_list_title">
-            <button
-              onClick={() => {
-                setAction("");
-                createList();
-              }}
-            >
-              Add list
-            </button>
+            <button type="submit">Add list</button>
             <button className="cancel" onClick={() => setAction("")}>
               <MdOutlineCancel color="inherit" size={"100%"} />
             </button>

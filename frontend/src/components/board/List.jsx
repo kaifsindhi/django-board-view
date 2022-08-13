@@ -10,8 +10,21 @@ const List = (props) => {
   const list = props.list; // Information about the list
   const [tiles, setTiles] = useState([]); // List tiles
 
-  const deleteCard = () => {
-    console.log(list.Id)
+  useEffect(() => {
+    // Get list tiles
+    fetch(
+      "http://127.0.0.1:8000/board/" +
+        props.board_id +
+        "/list/" +
+        list.Id +
+        "/card/"
+    )
+      .then((response) => response.json())
+      .then(setTiles);
+  }, [list]);
+
+  const deleteList = () => {
+    console.log(list.Id);
 
     const requestOptions = {
       method: "DELETE",
@@ -27,19 +40,6 @@ const List = (props) => {
     );
   };
 
-  useEffect(() => {
-    // Get list tiles
-    fetch(
-      "http://127.0.0.1:8000/board/" +
-        props.board_id +
-        "/list/" +
-        list.Id +
-        "/card/"
-    )
-      .then((response) => response.json())
-      .then(setTiles);
-  }, [list]);
-
   // console.log(tiles);
 
   return (
@@ -49,7 +49,7 @@ const List = (props) => {
           <h6>{list.Title}</h6>
           <button
             className="list_tile_edit delete"
-            onClick={() => deleteCard()}
+            onClick={() => deleteList()}
           >
             <div className="default">
               <AiOutlineDelete size={12} color="inherit" />
