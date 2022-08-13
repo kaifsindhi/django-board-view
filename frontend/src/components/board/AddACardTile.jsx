@@ -3,9 +3,30 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { HiOutlineTemplate } from "react-icons/hi";
 import { MdOutlineCancel } from "react-icons/md";
 
-const ListAdd = () => {
+const ListAdd = (props) => {
+  const board_id = props.list.Board;
+  const list_id = props.list.Id;
   const [action, setAction] = useState("");
+  const [card, setCard] = useState({ Title: "" });
   // actions : Default"" / Create"create" / Delete"delete" / Edit"edit"
+
+  const createCard = () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        List: list_id,
+        Title: card.Title,
+        Description: ""
+      }),
+    };
+    fetch(
+      "http://127.0.0.1:8000/board/" + board_id + "/list/" + list_id + "/card/",
+      requestOptions
+    ).then((response) => {
+      console.log(response.json());
+    });
+  };
 
   const renderCreateCard = () => {
     return (
@@ -16,13 +37,14 @@ const ListAdd = () => {
             type="text"
             id="Title"
             placeholder="Enter a card title..."
+            onChange={(e) => setCard({ Title: e.target.value })}
           />
         </div>
         <div className="enter_list_title">
           <button
             onClick={() => {
-              // TODO: Create
               setAction("");
+              createCard();
             }}
           >
             Add card

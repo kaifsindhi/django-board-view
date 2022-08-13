@@ -19,11 +19,12 @@ const ListTileAdd = (props) => {
         Title: list.Title,
       }),
     };
-    fetch("http://127.0.0.1:8000/board/" + board_id + "/list/", requestOptions).then(
-      (response) => {
-        console.log(response.json());
-      }
-    );
+    fetch(
+      "http://127.0.0.1:8000/board/" + board_id + "/list/",
+      requestOptions
+    ).then((response) => {
+      console.log(response.json());
+    });
   };
 
   const renderCreateList = () => {

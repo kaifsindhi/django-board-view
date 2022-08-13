@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import List from "./List";
 import TopBar from "./TopBar";
-import ListTileAdd from "./ListTileAdd";
+import ListTileAdd from "./AddAListTile";
 import "./board.css";
 
 const Board = (props) => {
