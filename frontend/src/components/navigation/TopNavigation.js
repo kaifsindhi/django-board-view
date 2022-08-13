@@ -25,7 +25,7 @@ const Navigation = () => {
         </button>
       </a>
 
-      <button className="navigation_item">
+      {/* <button className="navigation_item">
         <h6>Workspaces</h6>
         <RiArrowDropDownLine size={25} color="white" />
       </button>
@@ -78,7 +78,7 @@ const Navigation = () => {
 
       <button className="icon avatar">
         <AiOutlineUser size={25} color="white" />
-      </button>
+      </button> */}
     </nav>
   );
 };
