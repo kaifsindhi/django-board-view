@@ -62,12 +62,12 @@ const ListAdd = (props) => {
     return (
       <div className="list_title">
         <button className="list_add_card" onClick={() => setAction("create")}>
-          <AiOutlinePlus size={16} color="gray" />
+          <AiOutlinePlus size={16} color="black" />
           <h6>Add a card</h6>
         </button>
         <button>
           <a title="Create from template">
-            <HiOutlineTemplate size={16} color="gray" />
+            <HiOutlineTemplate size={16} color="black" />
           </a>
         </button>
       </div>

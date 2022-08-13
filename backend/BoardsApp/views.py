@@ -67,6 +67,11 @@ def ListAPI(request, board_id=0, list_id=0):
             list_serializer.save()
             return JsonResponse(list_serializer.data, safe=False)
         return JsonResponse("Failed to add", safe=False)
+        
+    elif request.method == 'DELETE':  # Delete a record
+        list_ = List.objects.get(Id=board_id)
+        list_.delete()
+        return JsonResponse("Deleted successfully", safe=False)
 
 
 @csrf_exempt
@@ -91,3 +96,8 @@ def CardAPI(request, board_id=0, list_id=0, card_id=0):
             card_serializer.save()
             return JsonResponse(card_serializer.data, safe=False)
         return JsonResponse("Failed to add", safe=False)
+
+    elif request.method == 'DELETE':  # Delete a record
+        card = Card.objects.get(Id=board_id)
+        card.delete()
+        return JsonResponse("Deleted successfully", safe=False)

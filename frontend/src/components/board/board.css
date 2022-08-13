@@ -120,7 +120,7 @@
 }
 
 .list button:hover {
-  background: var(--color-gray-light);
+  background: var(--color-gray);
 }
 
 .list .list_add_card {
@@ -128,9 +128,10 @@
 }
 
 .list .list_add_card h6 {
-  color: gray;
+  color: black;
 
   font-size: 11px;
+  font-weight: 400;
 }
 
 .list ul {
@@ -257,4 +258,48 @@ input.card_input {
 
 .add_card_container .enter_list_title {
   padding-left: 8px;
+}
+
+/* Edit List Title */
+
+.list:hover  {
+  background: var(--color-gray-light);
+}
+
+.list .list_tile_delete {
+  display: none;
+}
+
+.list:hover .list_tile_delete {
+  display: inherit;
+}
+
+/* Icons */
+
+.edit,
+.delete {
+  color: gray;
+}
+
+.edit:hover {
+  color: blue;
+}
+
+.delete:hover {
+  color: red;
+}
+
+.delete:hover .default,
+.edit:hover .default {
+  display: none;
+}
+
+.delete .hover,
+.edit .hover {
+  display: none;
+}
+
+.delete:hover .hover,
+.edit:hover .hover {
+  display: inherit;
 }
