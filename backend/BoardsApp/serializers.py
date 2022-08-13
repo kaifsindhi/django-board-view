@@ -11,10 +11,10 @@ class BoardSerializer(serializers.ModelSerializer):
 class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = List
-        fields = ('Id', 'Title')
+        fields = ('Board', 'Id', 'Title')
 
 
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
-        fields = ('List', 'Id', 'Title', 'Description')
+        fields = ('List', 'Id', 'Title')

@@ -22,13 +22,13 @@ def BoardAPI(request, id=0):
             boards = Board.objects.all()
             boards_serializer = BoardSerializer(boards, many=True)
             return JsonResponse(boards_serializer.data, safe=False)
-        
+
     elif request.method == 'POST':  # Create new record
         board_data = JSONParser().parse(request)
         board_serializer = BoardSerializer(data=board_data)
         if board_serializer.is_valid():
             board_serializer.save()
-            return JsonResponse("Added successfully", safe=False)
+            return JsonResponse(board_serializer.data, safe=False)
         return JsonResponse("Failed to add", safe=False)
 
     elif request.method == 'PUT':  # Update a record
@@ -50,7 +50,8 @@ def BoardAPI(request, id=0):
 def ListAPI(request, board_id=0, list_id=0):
     if request.method == 'GET':
         if list_id:  # Get specific list on board
-            list_ = Board.objects.get(Id=board_id).list_set.all().get(Id=list_id)
+            list_ = Board.objects.get(
+                Id=board_id).list_set.all().get(Id=list_id)
             list_serializer = BoardSerializer(list_)
             return JsonResponse(list_serializer.data, safe=False)
 
@@ -59,16 +60,34 @@ def ListAPI(request, board_id=0, list_id=0):
             list_serializer = ListSerializer(lists, many=True)
             return JsonResponse(list_serializer.data, safe=False)
 
+    elif request.method == 'POST':  # Create new list on board
+        list_data = JSONParser().parse(request)
+        list_serializer = ListSerializer(data=list_data)
+        if list_serializer.is_valid():
+            list_serializer.save()
+            return JsonResponse(list_serializer.data, safe=False)
+        return JsonResponse("Failed to add", safe=False)
+
 
 @csrf_exempt
 def CardAPI(request, board_id=0, list_id=0, card_id=0):
     if request.method == 'GET':
-        if card_id: # Get specific card on list
-            card = Board.objects.get(Id=board_id).list_set.all().get(Id=list_id).card_set.all().get(Id=card_id)
+        if card_id:  # Get specific card on list
+            card = Board.objects.get(Id=board_id).list_set.all().get(
+                Id=list_id).card_set.all().get(Id=card_id)
             card_serializer = BoardSerializer(card)
             return JsonResponse(card_serializer.data, safe=False)
 
-        else: # Get all cards on list
-            cards = Board.objects.get(Id=board_id).list_set.all().get(Id=list_id).card_set.all()
+        else:  # Get all cards on list
+            cards = Board.objects.get(Id=board_id).list_set.all().get(
+                Id=list_id).card_set.all()
             card_serializer = CardSerializer(cards, many=True)
             return JsonResponse(card_serializer.data, safe=False)
+
+    elif request.method == 'POST':  # Create new list on board
+        card_data = JSONParser().parse(request)
+        card_serializer = CardSerializer(data=card_data)
+        if card_serializer.is_valid():
+            card_serializer.save()
+            return JsonResponse(card_serializer.data, safe=False)
+        return JsonResponse("Failed to add", safe=False)

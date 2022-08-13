@@ -25,7 +25,6 @@ class Card(models.Model):
     List = models.ForeignKey(List, on_delete=models.CASCADE)
     Id = models.AutoField(primary_key=True)
     Title = models.CharField(max_length=100)
-    Description = models.CharField(max_length=1000)
 
     def __str__(self):
         return "[" + str(self.Id) + "]" + " " + self.Title
