@@ -65,11 +65,11 @@ const ListAdd = (props) => {
           <AiOutlinePlus size={16} color="black" />
           <h6>Add a card</h6>
         </button>
-        <button>
+        {/* <button>
           <a title="Create from template">
             <HiOutlineTemplate size={16} color="black" />
           </a>
-        </button>
+        </button> */}
       </div>
     );
   };

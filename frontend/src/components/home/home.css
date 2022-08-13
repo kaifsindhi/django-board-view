@@ -7,7 +7,7 @@
 }
 
 .board_tile {
-  background: var(--color-blue);
+  background: var(--color-blue-light-variant);
 
   border-radius: 0.4rem;
   width: 180px;
@@ -18,7 +18,7 @@
 }
 
 .board_tile:hover {
-  background: var(--color-blue-dark);
+  background: var(--color-blue-light);
 }
 
 .board_tile h6 {
@@ -70,7 +70,8 @@
   align-items: center;
 }
 
-.board_tile_line, .board_tile_2nd {
+.board_tile_line,
+.board_tile_2nd {
   width: 100%;
   display: flex;
 }
@@ -91,4 +92,33 @@
   background-color: var(--color-blue);
   color: white;
   padding: 10px;
+}
+
+.board_tile .icons {
+  display: flex;
+}
+
+.board_tile .icons .delete {
+  color: var(--color-blue-dark);
+}
+
+.board_tile .icons .delete:hover {
+  color: red;
+}
+
+.board_tile  {
+  display: flex;
+  flex-direction: column;
+}
+
+.board_tile a {
+  flex-grow: 1;
+}
+
+.board_tile .icons  {
+  display: none;
+}
+
+.board_tile:hover .icons  {
+  display: flex;
 }

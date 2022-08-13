@@ -119,3 +119,33 @@ button.gap {
     display: inherit;
   }
 }
+
+/* Icons */
+
+.edit,
+.delete {
+  color: gray;
+}
+
+.edit:hover {
+  color: blue;
+}
+
+.delete:hover {
+  color: red;
+}
+
+.delete:hover .default,
+.edit:hover .default {
+  display: none;
+}
+
+.delete .hover,
+.edit .hover {
+  display: none;
+}
+
+.delete:hover .hover,
+.edit:hover .hover {
+  display: inherit;
+}
