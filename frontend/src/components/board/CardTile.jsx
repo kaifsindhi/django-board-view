@@ -5,6 +5,8 @@ import {
   AiOutlineDelete,
   AiFillDelete,
 } from "react-icons/ai";
+import { GrTextAlignFull } from "react-icons/gr";
+import Card from "../card/Card";
 
 const ListTile = (props) => {
   const [card, setCard] = useState(props.tile);
@@ -25,7 +27,7 @@ const ListTile = (props) => {
     );
   };
 
-  const editCard = () => {
+  const editCardTitle = () => {
     console.log(card);
 
     const requestOptions = {
@@ -35,6 +37,7 @@ const ListTile = (props) => {
         List: card.List,
         Id: card.Id,
         Title: card.Title,
+        Description: card.Description,
       }),
     };
     fetch("http://127.0.0.1:8000/card/" + card.Id, requestOptions).then(
@@ -48,7 +51,17 @@ const ListTile = (props) => {
     return (
       <div className="list_tile">
         <div className="list_tile_title">
-          <h6>{card.Title}</h6>
+          <h6
+            onClick={() => {
+              if (action == "viewCard") {
+                setAction("");
+              } else {
+                setAction("viewCard");
+              }
+            }}
+          >
+            {card.Title}
+          </h6>
           <button
             className="list_tile_edit edit"
             onClick={() => setAction("edit")}
@@ -72,9 +85,11 @@ const ListTile = (props) => {
             </div>
           </button>
         </div>
-        {/* <div className="list_tile_title">
-          <GrTextAlignFull size={14} color="gray" />
-        </div> */}
+        {card.Description !== "" && (
+          <div className="list_tile_title">
+            <GrTextAlignFull size={14} color="gray" />
+          </div>
+        )}
       </div>
     );
   };
@@ -85,7 +100,7 @@ const ListTile = (props) => {
         className="card"
         onSubmit={() => {
           setAction("");
-          editCard();
+          editCardTitle();
         }}
       >
         <input
@@ -93,18 +108,30 @@ const ListTile = (props) => {
           id="Title"
           value={card.Title}
           onChange={(e) =>
-            setCard({ List: card.List, Id: card.Id, Title: e.target.value })
+            setCard({
+              List: card.List,
+              Id: card.Id,
+              Title: e.target.value,
+              Description: card.Title,
+            })
           }
         />
       </form>
     );
   };
 
+  const renderCard = () => {
+    return <Card card={card} />;
+  };
+
   return (
-    <li>
-      {action === "" && renderCreateDefault()}
-      {action === "edit" && renderEditInput()}
-    </li>
+    <>
+      {action === "viewCard" && renderCard()}
+      <li>
+        {(action === "" || action == "viewCard") && renderCreateDefault()}
+        {action === "edit" && renderEditInput()}
+      </li>
+    </>
   );
 };
 

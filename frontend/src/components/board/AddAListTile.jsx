@@ -24,6 +24,7 @@ const ListTileAdd = (props) => {
       requestOptions
     ).then((response) => {
       console.log(response.json());
+      setList({Title: ""})
     });
   };
 

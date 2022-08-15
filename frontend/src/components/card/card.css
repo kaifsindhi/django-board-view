@@ -1,0 +1,117 @@
+div.card_container {
+  background: var(--color-gray-light);
+  z-index: 2;
+
+  border-radius: 0.5rem;
+  padding: 20px;
+
+  position: absolute;
+
+  width: 400px;
+
+  top: 25vh;
+  left: 50vw;
+  transform: translateX(-50%);
+}
+
+div.card_container div.card_title {
+  display: flex;
+  align-items: center;
+}
+
+div.card_container div.card_title h6 {
+  margin-left: 10px;
+  font-size: 22px;
+
+  flex-grow: 1;
+}
+
+div.card_container div.card_icon.cancel {
+  display: flex;
+  align-items: baseline;
+  justify-content: right;
+  color: black;
+}
+
+div.card_container div.card_icon.cancel button {
+  color: inherit;
+  border-radius: 0.4rem;
+  width: 32px;
+  height: 32px;
+}
+
+div.card_container div.card_icon.cancel button:hover {
+  color: red;
+  background: rgb(182, 182, 182);
+}
+
+div.card_container div.card_subtitle {
+  padding-left: 35px;
+}
+
+div.card_container div.card_subtitle h6 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+div.card_container div.card_subtitle h6 a {
+  color: rgb(56, 56, 56);
+  text-decoration: underline;
+}
+
+div.card_container div.card_description {
+  padding-top: 15px;
+}
+
+div.card_container div.card_description div.card_title {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+div.card_container div.card_description button.card_edit {
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background: var(--color-blue);
+  color: white;
+}
+
+div.card_container div.card_description button.card_edit:hover {
+  background: var(--color-blue-light);
+}
+
+div.card_container div.card_description p {
+  padding-top: 5px;
+  word-wrap: break-word;
+}
+
+div.card_container div.card_description textarea {
+  margin-top: 5px;
+  min-height: 32px;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+div.card_container form div.form_buttons {
+  padding-top: 5px;
+  display: flex;
+}
+
+div.card_container form div.form_buttons button {
+  color: black;
+  padding: 15px;
+}
+
+div.card_container form div.form_buttons button.save {
+  background: var(--color-blue);
+  color: white;
+}
+
+div.card_container form div.form_buttons button.save:hover {
+  background: var(--color-blue-light);
+}
+div.card_container form div.form_buttons button.cancel:hover {
+  background: var(--color-gray);
+}

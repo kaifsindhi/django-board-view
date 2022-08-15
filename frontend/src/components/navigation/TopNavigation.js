@@ -14,9 +14,9 @@ import './navigation.css';
 const Navigation = () => {
   return (
     <nav>
-      <button className="icon">
+      {/* <button className="icon">
         <TbGridDots color="white" size={20} />
-      </button>
+      </button> */}
 
       <a href="/">
         <button className="title">

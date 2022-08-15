@@ -17,7 +17,7 @@ const ListAdd = (props) => {
       body: JSON.stringify({
         List: list_id,
         Title: card.Title,
-        Description: "",
+        Description: "", 
       }),
     };
     fetch(
